@@ -1,0 +1,51 @@
+// Suche alle Labore
+GET {{baseUrl}}/api
+Authorization: {{basic-auth}}
+Host: {{host}}
+ALPN: h2
+
+###
+
+// Suche mit vorhandener Labor-ID
+GET {{baseUrl}}/api/10000000-0000-0000-0000-000000000001
+Accept: application/hal+json
+Authorization: {{basic-auth}}
+Host: {{host}}
+ALPN: h2
+
+###
+
+// Suche mit ungueltiger Labor-ID
+GET {{baseUrl}}/api/YYYYYYYY-YYYY-YYYY-YYYY-YYYYYYYYYYYY
+Accept: application/hal+json
+Authorization: {{basic-auth}}
+Host: {{host}}
+ALPN: h2
+
+###
+
+// Suche mit nicht-vorhandener Labor-ID
+GET {{baseUrl}}/api/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF
+Accept: application/hal+json
+Authorization: {{basic-auth}}
+Host: {{host}}
+ALPN: h2
+
+###
+
+// Suche mit vorhandener Labor-ID und If-None-Match
+GET {{baseUrl}}/api/10000000-0000-0000-0000-000000000001
+Accept: application/hal+json
+If-None-Match: 0
+Authorization: {{basic-auth}}
+Host: {{host}}
+ALPN: h2
+
+###
+
+// Suche mit vorhandener Dok-ID
+GET {{baseUrl}}/api?dokId=00000000-0000-0000-0000-000000000001
+Accept: application/hal+json
+Authorization: {{basic-auth}}
+Host: {{host}}
+ALPN: h2

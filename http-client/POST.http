@@ -1,0 +1,30 @@
+// Eine neue Labor anlegen
+POST {{baseUrl}}/api
+Content-Type: application/json
+Authorization: {{basic-auth}}
+Host: {{host}}
+ALPN: h2
+
+< data/labor-neu.json
+
+###
+
+// Eine leere Labor anlegen
+POST {{baseUrl}}/api
+Content-Type: application/json
+Authorization: {{basic-auth}}
+Host: {{host}}
+ALPN: h2
+
+< data/labor-neu-leer.json
+
+###
+
+// Eine ungueltige Labor anlegen
+POST {{baseUrl}}/api
+Content-Type: application/json
+Authorization: {{basic-auth}}
+Host: {{host}}
+ALPN: h2
+
+< data/labor-neu-invalid.json
